@@ -1,12 +1,16 @@
 ## What is this?
 
-This is my own version of The Nature Of Code examples in [p5.js](http://p5js.org/)
+This is my own version of [The Nature Of Code](http://natureofcode.com/) examples in [p5.js](http://p5js.org/)
 
 __This is a personal exercise and a work in progress.__
 
 For a reference implementation: https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js
 
-There are some differences from the reference implementation. Most important, I use the p5 instantiation mode (instead of global mode)
+There are some differences from the reference implementation:
+
+- Most important, I use the p5 instantiation mode (instead of global mode)
+- I want the code [standard](https://github.com/feross/standard) compilant
+
 
 ## How to?
 
