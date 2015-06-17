@@ -6,9 +6,10 @@ __This is a personal exercise and a work in progress.__ For a reference implemen
 
 There are some differences between the reference implementation and this one:
 
-- Most important, I use the p5 instantiation mode (instead of global mode)
-- I want the code [standard](https://github.com/feross/standard) compilant
-- The code style is what I use right now, not necessary for newbies
+- I use the p5 instantiation mode (instead of global mode)
+- All the code is inside one file (`sketch.js`)
+- The code is [standard](https://github.com/feross/standard) compilant
+- The code style is what I use right now, not necessarily for newbies
 
 
 ## How to?
