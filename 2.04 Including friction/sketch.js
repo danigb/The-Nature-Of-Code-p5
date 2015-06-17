@@ -39,26 +39,36 @@ new p5(function (p) {
 
   var width = 640
   var height = 360
-  var total = 100
+  var total = 30
   var movers = []
-  var wind = p.createVector(0.01, 0)
-  var gravity = p.createVector(0, 0.1)
+
+  var wind = function () {
+    return p.createVector(0.01, 0)
+  }
+  var gravity = function (mover) {
+    return p.createVector(0, 0.1 * mover.mass)
+  }
+  var friction = function (mover) {
+    var frictionMag = 0.01 * 1
+    return mover.velocity.copy().mult(-1).normalize().mult(frictionMag)
+  }
 
   p.setup = function () {
     p.createCanvas(width, height)
     for (var i = 0; i < total; i++) {
-      movers[i] = new Mover(0, 0, p.random(0.1, 5))
+      movers.push(new Mover(0, 0, p.random(0.1, 5)))
     }
   }
 
   p.draw = function () {
     p.background(250)
-    for (var i = 0; i < total; i++) {
-      movers[i].applyForce(wind)
-      movers[i].applyForce(gravity)
-      movers[i].update()
-      movers[i].checkEdges()
-      movers[i].display()
-    }
+    movers.forEach(function (m) {
+      m.applyForce(wind())
+      m.applyForce(gravity(m))
+      m.applyForce(friction(m))
+      m.update()
+      m.checkEdges()
+      m.display()
+    })
   }
 })
