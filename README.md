@@ -11,6 +11,7 @@ __This is a personal exercise and a work in progress.__ For a reference implemen
 
 There are some differences between that implementation and this one:
 
+- This is __far__ for complete
 - I use the p5 instantiation mode (instead of global mode)
 - All the code is inside one file (`sketch.js`)
 - The code is [standard](https://github.com/feross/standard) compilant
