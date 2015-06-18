@@ -1,0 +1,16 @@
+{
+  "chapters": [
+    { "num": "0", "title": "Introduction"},
+    { "num": "1", "title": "Vectors"},
+    { "num": "2", "title": "Forces"},
+    { "num": "3", "title": "Oscillation",
+      "url": "http://natureofcode.com/book/chapter-3-oscillation/"},
+    { "num": "4", "title": "Particle systems"},
+    { "num": "5", "title": "Physics libraries"},
+    { "num": "6", "title": "Autonomous agents"},
+    { "num": "7", "title": "Cellular automata"},
+    { "num": "8", "title": "Fractals"},
+    { "num": "9", "title": "The evolution of code"},
+    { "num": "10", "title": "Neural networks"}
+  ]
+}

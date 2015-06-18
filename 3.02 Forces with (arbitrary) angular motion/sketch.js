@@ -7,7 +7,6 @@ new p5(function (p) {
     this.mass = mass
     this.angle = 0
     this.aVelocity = 0
-    this.aAcceleration = 0.001
 
     this.update = function () {
       this.velocity.add(this.acceleration)
@@ -16,12 +15,14 @@ new p5(function (p) {
       this.acceleration.mult(0)
 
       this.aVelocity += this.aAcceleration
+      this.aVelocity = p.constrain(this.aVelocity, -0.05, 0.05)
       this.angle += this.aVelocity
     }
 
     this.applyForce = function (force) {
       var weightedForce = p5.Vector.div(force, this.mass)
       this.acceleration.add(weightedForce)
+      this.aAcceleration = this.acceleration.x / 100
     }
 
     this.display = function () {
@@ -29,6 +30,7 @@ new p5(function (p) {
       p.fill('rgba(0,0,0,0.3)')
       p.push()
       p.translate(this.position.x, this.position.y)
+      p.rotate(this.angle)
       var radius = 16 * this.mass
       p.rect(0, 0, radius, radius)
       p.pop()
@@ -48,23 +50,20 @@ new p5(function (p) {
 
   var width = 640
   var height = 360
-  var total = 100
+  var total = 30
   var movers = []
-  var wind = p.createVector(0.01, 0)
-  var gravity = p.createVector(0, 0.1)
 
   p.setup = function () {
     p.createCanvas(width, height)
     for (var i = 0; i < total; i++) {
-      movers[i] = new Mover(0, 0, p.random(0.1, 5))
+      movers[i] = new Mover(p.random(0, width), p.random(0, height), p.random(0.1, 5))
+      movers[i].applyForce(p.createVector(p.random(-2, 2), p.random(-2, 2)))
     }
   }
 
   p.draw = function () {
     p.background(250)
     for (var i = 0; i < total; i++) {
-      movers[i].applyForce(wind)
-      movers[i].applyForce(gravity)
       movers[i].update()
       movers[i].checkEdges()
       movers[i].display()
