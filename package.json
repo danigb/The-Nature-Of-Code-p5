@@ -1,0 +1,27 @@
+{
+  "name": "The-Nature-of-Code",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Examples, exercices and stuff related to the awesome book The Nature of Code",
+  "main": "site/build.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danigb/The-Nature-of-Code.git"
+  },
+  "keywords": [
+    "homework",
+    "p5.js",
+    "the nature of code",
+    "processing"
+  ],
+  "author": "danigb",
+  "license": "AGPL v3",
+  "bugs": {
+    "url": "https://github.com/danigb/The-Nature-of-Code/issues"
+  },
+  "homepage": "https://github.com/danigb/The-Nature-of-Code",
+  "devDependencies": {
+    "handlebars": "^3.0.3"
+  }
+}
