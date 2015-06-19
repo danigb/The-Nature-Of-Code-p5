@@ -10,15 +10,15 @@ var INDEX_TEMPLATE = path.join(__dirname, 'index.html.handlebars')
 var data = require('./data.json')
 var chaptersByNum = {}
 data.chapters.forEach(function (chapter) {
-  chapter.examples = []
+  chapter.sketches = []
   chaptersByNum[chapter.num] = chapter
 })
 
 var match
 var files = fs.readdirSync(ROOT)
 files.forEach(function (file) {
-  if ((match = /^(\d{1,2})\.(.*)$/.exec(file))) {
-    chaptersByNum[match[1]].examples.push(match[2])
+  if ((match = /^(\w*)\s*(\d{1,2})\.(.*)$/.exec(file))) {
+    chaptersByNum[match[2]].sketches.push(match[0])
   }
 })
 
